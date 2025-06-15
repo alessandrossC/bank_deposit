@@ -32,6 +32,15 @@ The dataset is sourced from the **UCI Machine Learning Repository** and contains
 - **Economic indicators**
 - **Target variable:** whether the client subscribed to a term deposit (`yes`/`no`)
 
+## Results
+Model	Train AUROC	Validation AUROC	Test AUROC	Key Features
+LogisticRegression	0.798	0.792	—	age, euribor3m, education
+KNeighbors	0.870	0.746	—	age, job, education
+RandomForest	0.841	0.802	0.80	age, euribor3m, campaign
+XGBoost	0.833	0.801	0.80	euribor3m, nr.employed
+LightGBM	0.863	0.800	0.80	age, euribor3m, engineered
+
+Best model: LightGBM, chosen for production due to high AUROC and efficiency.
 ---
 
 ## Practical Value
